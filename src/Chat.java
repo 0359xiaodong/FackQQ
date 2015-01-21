@@ -1,9 +1,8 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.InetAddress;
-import java.net.NetworkInterface;
-import java.net.SocketException;
 import java.net.UnknownHostException;
-import java.util.Enumeration;
 
 /**
  * Created by art on 1/20/15.
@@ -15,6 +14,8 @@ public class Chat extends JFrame {
     private JPanel rootPanel;
     private JFormattedTextField formattedTextField1;
     private JList chatList;
+    private JButton sendButton;
+    private JTextField textField1;
 
     public Chat() {
         super("Chat");
@@ -27,8 +28,17 @@ public class Chat extends JFrame {
         setContentPane(rootPanel);
 //        pack();
 
+        Client client = new Client("192.168.1.100");
+        Thread clientThread = new Thread(client);
+        clientThread.run();
 
         setVisible(true);
+        sendButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
 
     private String getHostIP () {
@@ -42,10 +52,5 @@ public class Chat extends JFrame {
         }
 
         return ip;
-    }
-
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-
     }
 }

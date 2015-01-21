@@ -1,10 +1,6 @@
 import javax.swing.*;
-import javax.swing.text.StringContent;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.NetworkInterface;
-import java.net.SocketException;
-import java.util.Enumeration;
 
 /**
  * Created by art on 1/19/15.
@@ -20,7 +16,6 @@ public class MainForm extends JFrame {
         super("FakeQQ");
 
         setContentPane(rootPanel);
-
         pack();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -47,12 +42,13 @@ public class MainForm extends JFrame {
         });
 
         rootPanel.setSize(400,300);
+
         setVisible(true);
     }
 
     private void newChat() {
         Chat chat = new Chat();
-        chat.show();
+        chat.setVisible(true);
     }
 
 }
