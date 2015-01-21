@@ -2,9 +2,10 @@
  * Created by art on 1/20/15.
  */
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class DBManager {
     private static final DBManager instance = new DBManager();
