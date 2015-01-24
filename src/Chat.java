@@ -28,9 +28,9 @@ public class Chat extends JFrame {
         setContentPane(rootPanel);
 //        pack();
 
-        Client client = new Client("192.168.1.100");
-        Thread clientThread = new Thread(client);
-        clientThread.run();
+//        Client client = new Client("192.168.1.100");
+//        Thread clientThread = new Thread(client);
+//        clientThread.run();
 
         setVisible(true);
         sendButton.addActionListener(new ActionListener() {
@@ -48,7 +48,7 @@ public class Chat extends JFrame {
             InetAddress addr = InetAddress.getLocalHost();
             ip = addr.getHostAddress();
         } catch (UnknownHostException e) {
-
+            System.err.println(e);
         }
 
         return ip;
